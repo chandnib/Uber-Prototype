@@ -1,0 +1,159 @@
+<html>
+
+<head>
+<title>Uber</title>
+<meta charset="utf-8">
+<link rel="icon" href="/images/favicon.ico">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script type="text/javascript"
+	src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script type="text/javascript"
+	src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script
+	src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.js"></script>
+<link
+	href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css"
+	rel="stylesheet" type="text/css">
+<link
+	href="http://pingendo.github.io/pingendo-bootstrap/themes/default/bootstrap.css"
+	rel="stylesheet" type="text/css">
+<script type="text/javascript" src="/js/adminjs.js"></script>
+<link href="/stylesheets/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body
+	style="padding-top: 80px; padding-bottom: 70px; background-color: #09091a;"
+	ng-app="UberPrototype">
+	<nav
+		class="navbar navbar-default navbar-fixed-top col-lg-offset-0 col-lg-12"
+		style="background-color: #09091a; min-height: 95; border-color: #09091a;">
+		<div class="container-fluid">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#topFixedNavbar1">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#"
+					style="color: #FFFFFF; position: absolute; top: 20%; left: 50%; margin-left: -120px !important; display: block;"><img
+					src="/images/uber_main_logo.png" style="height: 50px;"></a>
+			</div>
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="topFixedNavbar1">
+				<ul class="nav navbar-nav navbar-right"></ul>
+			</div>
+			<!-- /.navbar-collapse -->
+		</div>
+		<!-- /.container-fluid -->
+	</nav>
+	<div class="section"
+		style="padding: 0px 300px; margin: 5px; width: 100%"
+		ng-controller="loginController">
+		<div class="container" style="padding: 5px; margin: 5px; width: 99%;">
+			<div class="row">
+				<div class="col-md-2"></div>
+				<div class="col-md-8" style="">
+					<div class="row text-center" style="max-height: 20%">
+						<div class="col-md-12 text-center">
+							<p class="background-line push-small--top text-center title"
+								style="color: #c0c0c8; content: ''; display: table-cell; position: relative; top: 0.8em; line-height: 1.71429; overflow-y: scroll; content: ''; display: table-cell; position: relative; top: 0.8em; box-sizing: border-box; min-height: 0%; width: 100%; font-family: ff-clan-web-pro, 'Helvetica Neue', Helvetica, sans-serif; font-weight: 400; background-color: #09091a; -webkit-margin-before: 1em; -webkit-margin-after: 1em; -webkit-margin-start: 0px; -webkit-margin-end: 0px; box-sizing: border-box; margin: 0; padding: 5; display: table; white-space: nowrap; color: white; font-size: 1.35em; text-transform: uppercase; margin-bottom: 1.71429rem;">
+								<span style="color: #c0c0c8;">Sign In</span>
+							</p>
+						</div>
+					</div>
+					<div class="row text-center" style="max-height: 30%">
+						<div class="col-md-12 text-center" style="">
+							<p class="background-line lead push-small--top text-center title"
+								style="color: #c0c0c8; content: ''; display: table-cell; position: relative; top: 0.8em; line-height: 1.71429; overflow-y: scroll; content: ''; display: table-cell; position: relative; top: 0.8em; box-sizing: border-box; min-height: 0%; width: 100%; font-family: ff-clan-web-pro, 'Helvetica Neue', Helvetica, sans-serif; font-weight: 400; background-color: #09091a; -webkit-margin-before: 1em; -webkit-margin-after: 1em; -webkit-margin-start: 0px; -webkit-margin-end: 0px; box-sizing: border-box; margin: 0; padding: 5; display: table; white-space: nowrap; color: white; font-size: 0.875em; text-transform: uppercase; margin-bottom: 1.71429rem;">
+								<a href="#" class="btn btn--full btn--facebook push-tiny--top"
+									data-js="facebook-connect"
+									style="color: white; border-color: #5d7eb6; background-color: #5172ab; width: 100%;">
+									<span class="push-huge--left flush">Connect with
+										Facebook</span>
+								</a>
+							</p>
+						</div>
+					</div>
+					<div class="row text-center" style="max-height: 20%">
+						<div class="col-md-12 text-center">
+							<p class="background-line push-small--top text-center title"
+								style="color: #c0c0c8; content: ''; display: table-cell; position: relative; top: 0.8em; line-height: 1.71429; overflow-y: scroll; content: ''; display: table-cell; position: relative; top: 0.8em; box-sizing: border-box; min-height: 0%; width: 100%; font-family: ff-clan-web-pro, 'Helvetica Neue', Helvetica, sans-serif; font-weight: 400; background-color: #09091a; -webkit-margin-before: 1em; -webkit-margin-after: 1em; -webkit-margin-start: 0px; -webkit-margin-end: 0px; box-sizing: border-box; margin: 0; padding: 5; display: table; white-space: nowrap; color: white; font-size: 0.875em; margin-bottom: 1.71429rem;">
+								<span style="color: #c0c0c8;">or use email</span>
+							</p>
+						</div>
+					</div>
+					<form role="form" name="adminLoginForm" id="adminLoginForm"
+						action="/loginAdmin" method="post" novalidate>
+						<div class="row text-center" style="max-height: 20%">
+							<div class="col-md-12 text-center">
+								<p class="background-line push-small--top text-left title"
+									style="content: ''; display: table-cell; position: relative; top: 0.8em; line-height: 1.71429; overflow-y: scroll; content: ''; display: table-cell; position: relative; top: 0.8em; box-sizing: border-box; min-height: 0%; width: 100%; font-family: ff-clan-web-pro, 'Helvetica Neue', Helvetica, sans-serif; font-weight: 400; background-color: #09091a; -webkit-margin-before: 1em; -webkit-margin-after: 1em; -webkit-margin-start: 0px; -webkit-margin-end: 0px; box-sizing: border-box; margin: 0; padding: 5; display: table; white-space: nowrap; color: white; font-size: 0.875em; text-transform: uppercase; margin-bottom: 1.71429rem;">
+									<label class="label" for="email"
+										style="box-sizing: border-box; display: block; cursor: pointer; margin-bottom: 6px; font-size: 11px; color: #c0c0c8; text-align: left; font-family: ff-clan-web-pro, 'Helvetica Neue', Helvetica, sans-serif; font-weight: 500;">Email</label>
+									<input type="email" class="text-input " name="username"
+										id="user.username" ng-model="user.username"
+										style="height: 50px; color: #09091a; width: 100%; padding: 0.625em 0.75em; margin-bottom: 12px; background: white; border: 1px solid #cccccc; border-radius: 3px; outline: none; line-height: 1.25; font-weight: 500; letter-spacing: normal; word-spacing: normal; text-transform: none; text-indent: 0px; text-shadow: none; display: inline-block; text-align: start;">
+								</p>
+							</div>
+						</div>
+						<div class="row text-center" style="max-height: 20%">
+							<div class="col-md-12 text-center">
+								<p class="background-line push-small--top text-left title"
+									style="content: ''; display: table-cell; position: relative; top: 0.8em; line-height: 1.71429; overflow-y: scroll; content: ''; display: table-cell; position: relative; top: 0.8em; box-sizing: border-box; min-height: 0%; width: 100%; font-family: ff-clan-web-pro, 'Helvetica Neue', Helvetica, sans-serif; font-weight: 400; background-color: #09091a; -webkit-margin-before: 1em; -webkit-margin-after: 1em; -webkit-margin-start: 0px; -webkit-margin-end: 0px; box-sizing: border-box; margin: 0; padding: 5; display: table; white-space: nowrap; color: white; font-size: 0.875em; text-transform: uppercase; margin-bottom: 1.71429rem;">
+									<label class="label" for="Password"
+										style="box-sizing: border-box; display: block; cursor: pointer; margin-bottom: 6px; font-size: 11px; color: #c0c0c8; text-align: left; font-family: ff-clan-web-pro, 'Helvetica Neue', Helvetica, sans-serif; font-weight: 500;">Password</label>
+									<input type="password" class="text-input " name="password"
+										id="user.password" ng-model="user.password"
+										style="height: 50px; color: #09091a; width: 100%; padding: 0.625em 0.75em; margin-bottom: 12px; background: white; border: 1px solid #cccccc; border-radius: 3px; outline: none; line-height: 1.25; font-weight: 500; letter-spacing: normal; word-spacing: normal; text-transform: none; text-indent: 0px; text-shadow: none; display: inline-block; text-align: start; font-size: 11px; color: #c0c0c8; text-align: left; font-family: ff-clan-web-pro, 'Helvetica Neue', Helvetica, sans-serif; font-weight: 500;">
+								</p>
+							</div>
+						</div>
+						<div class="row text-center" style="max-height: 20%">
+							<div class="col-md-12 text-center">
+								<p class="background-line lead push-small--top text-left title"
+									style="content: ''; display: table-cell; position: relative; top: 0.8em; line-height: 1.71429; overflow-y: scroll; content: ''; display: table-cell; position: relative; top: 0.8em; box-sizing: border-box; min-height: 0%; width: 100%; font-family: ff-clan-web-pro, 'Helvetica Neue', Helvetica, sans-serif; font-weight: 400; background-color: #09091a; -webkit-margin-before: 1em; -webkit-margin-after: 1em; -webkit-margin-start: 0px; -webkit-margin-end: 0px; box-sizing: border-box; margin: 0; padding: 5; display: table; white-space: nowrap; color: white; font-size: 0.875em; text-transform: uppercase; margin-bottom: 1.71429rem;">
+									<span> <label class="checkbox" for="checkbox-rememberme">
+											<input type="checkbox" id="checkbox-rememberme" checked="">Remember
+											Me
+									</label>
+									</span>
+								</p>
+							</div>
+						</div>
+						<div class="row text-center" style="max-height: 20%">
+							<div class="col-md-12 text-center">
+								<p class="background-line push-small--top text-left title"
+									style="content: ''; display: table-cell; position: relative; top: 0.8em; line-height: 1.71429; overflow-y: scroll; content: ''; display: table-cell; position: relative; top: 0.8em; box-sizing: border-box; min-height: 0%; width: 100%; font-family: ff-clan-web-pro, 'Helvetica Neue', Helvetica, sans-serif; font-weight: 400; background-color: #09091a; -webkit-margin-before: 1em; -webkit-margin-after: 1em; -webkit-margin-start: 0px; -webkit-margin-end: 0px; box-sizing: border-box; margin: 0; padding: 5; display: table; white-space: nowrap; color: white; font-size: 0.875em; text-transform: uppercase; margin-bottom: 1.71429rem;">
+									<button class="btn btn--huge btn--full" type="submit"
+										ng-disabled="adminLoginForm.$invalid"
+										style="text-transform: uppercase; border-radius: 3px; outline: none; font-size: 14px; font-size: 1rem; line-height: 1.21429; display: inline-block; vertical-align: middle; font: inherit; text-align: center; border: none; margin: 0; cursor: pointer; overflow: visible; padding: 11px 23px; background-color: #1fbad6; border: 1px solid #1fbad6; text-decoration: none; color: white; width: 100%; padding: 1.0em 3.0em; text-transform: uppercase; border-radius: 3px; outline: none; line-height: 1.21429; font-weight: 500; font-size: 15px;">Sign
+										In</button>
+								</p>
+							</div>
+						</div>
+						<div class="row text-center" style="max-height: 20%">
+							<div class="col-md-12 text-center">
+								<p class="background-line push-small--top text-center title"
+									style="content: ''; display: table-cell; position: relative; top: 0.8em; line-height: 1.71429; overflow-y: scroll; content: ''; display: table-cell; position: relative; top: 0.8em; box-sizing: border-box; min-height: 0%; width: 100%; font-family: ff-clan-web-pro, 'Helvetica Neue', Helvetica, sans-serif; font-weight: 400; background-color: #09091a; -webkit-margin-before: 1em; -webkit-margin-after: 1em; -webkit-margin-start: 0px; -webkit-margin-end: 0px; box-sizing: border-box; margin: 0; padding: 5; display: table; white-space: nowrap; color: white; font-size: 0.875em; text-transform: uppercase; margin-bottom: 1.71429rem;">
+									<a class="btn btn--link"
+										href="https://login.uber.com/forgot-password">Forgot
+										Password</a>
+								</p>
+							</div>
+						</div>
+						<hr class="push--top">
+						<div class="alert alert-danger" ng-init="user=<%= user  %>"
+							ng-show="user.errorInloginForm">
+							<strong>Error! {{user.errorMessage}}</strong>
+						</div>
+					</form>
+				</div>
+				<div class="col-md-2"></div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

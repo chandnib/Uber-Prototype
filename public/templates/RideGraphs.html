@@ -1,0 +1,76 @@
+<div class="col-xs-12" ng-init="initRideGraphs()">
+<form class="form" novalidate="">
+		  <br>
+		  <div class="row">
+		  <div class="col-xs-10 col-xs-offset-1">
+		  <div class="row" style="padding-top:10px; padding-bottom:10px;">
+            <div class="col-xs-4">
+              <label><font size="3" color="#808080">Area</font></label>
+            </div>
+            <div class="col-xs-8">
+              <input type="text" class="form-control" id="area1" name="area1" ng-model="area1" placeholder="Enter the location" googlearea/>
+            </div>
+		  </div>
+		  <div class="row" style="padding-top:10px; padding-bottom:10px;">
+            <div class="col-xs-4">
+              <label><font size="3" color="#808080">Customer Id</font></label>
+            </div>
+            <div class="col-xs-8">
+              <input type="text" class="form-control" id="Customerid" name="Customerid" ng-model="Customerid" placeholder="Enter Customer ID" />
+            </div>
+           </div>
+           <div class="row" style="padding-top:10px; padding-bottom:10px;">
+            <div class="col-xs-4">
+              <label><font size="3" color="#808080">Driver Id</font></label>
+            </div>
+            <div class="col-xs-8">
+              <input type="text" class="form-control" id="Driverid" name="Driverid" ng-model="Driverid" placeholder="Enter Driver ID" />
+            </div>
+           </div>
+           <div class="row" style="padding-top:10px; padding-bottom:10px;">
+            <div class="col-xs-4">
+              <label><font size="3" color="#808080">From Date</font></label>
+            </div>
+            <div class="col-xs-8">
+            <div class="form-group">
+              <input class="form-control  input-lg" type="date" class="form-control" id="datereq" name="datereq" ng-model="datereq" style="height:32px;" required/>
+            <p ng-show="" class="help-block" style="padding: 0px 0px;">Please
+				Select From Date.</p>
+           </div>
+           </div>
+           </div>
+           <div class="row" style="padding-top:10px; padding-bottom:10px;">
+            <div class="col-xs-4">
+              <label><font size="3" color="#808080">To Date</font></label>
+            </div>
+            <div class="col-xs-8">
+            <div class="form-group">
+              <input class="form-control  input-lg" type="date" class="form-control" id="datereq1" name="datereq1" ng-model="datereq1" style="height:32px;" required/>
+            <p ng-show="" class="help-block" style="padding: 0px 0px;">Please
+				Select To Date.</p>
+           </div>
+           </div>
+           </div>
+           
+           <div class="row" style="padding-top: 20px; padding-bottom: 20px;">
+           <div class="col-xs-4 col-xs-offset-1">
+  		   <button type="button" class="btn btn-primary custom" ng-click="RideGraphs()">Ride Statistics</button>
+  		   </div>
+  		   <div class="col-xs-4 col-xs-offset-1">
+  		   <button type="button" class="btn btn-primary btn-sm custom" ng-click="CancelRideGraphs()">Cancel</button>
+           </div>
+           </div>
+           </div>
+		  </div>
+		 	
+		  <div class="col-xs-12">
+		  <div class="row" ng-hide="HideRideStats">
+           <div class="col-xs-8 col-xs-offset-2" style="">
+                <div google-chart chart="chart" style="{{chart.cssStyle}}"/>
+           </div>
+           </div>
+		  </div>
+		  
+		  </form>
+		  </div>
+           

@@ -1,0 +1,86 @@
+
+<div class="row" style="padding-top: 20px; padding-bottom: 20px;"
+	ng-init="getPageData()">
+</div>
+<div ng-if="canceled == false" class="row">
+<div class="col-xs-4 col-xs-offset-4" style="text-align: center;">
+		<h4>Your Ride Has Been Created</h4>
+	</div>
+</div>
+
+<div ng-if="canceled == true" class="row" style="padding-top: 20px; padding-bottom: 20px;">
+	<div class="col-xs-4 col-xs-offset-4" style="text-align: center;">
+		<h4>Your Ride Has Been Cancelled</h4>
+	</div>
+</div>
+<div ng-if="canceled == false" class="row">
+			<div class="col-xs-8 col-xs-offset-2"
+				style="border-top: 1px solid #ccc; text-align: center; padding-top: 10px;">
+				<div id="dvDistance" ng-model="distance">Distance {{ distance }}</div>
+				<div id="dvDuration" ng-model="duration">Time {{ duration }}</div>
+			</div>
+		</div>
+<div ng-if="canceled == false" class="row">
+	<div class="row">
+	<div ng-if="editRide == false" class="col-xs-10 col-xs-offset-1"
+		style="padding-top: 30px; padding-bottom: 30px;">
+		<div class="col-xs-3 col-xs-offset-3" style="text-align: center;">
+			<input type="button" value="Edit Ride" ng-click="editTheRide()" class="btn btn-primary btn-md"
+				style="min-width: 100px;">
+		</div>
+		<div class="col-xs-3" style="text-align: center;">
+			<input type="button" value="Cancel Ride" ng-click="cancelTheRide()" class="btn btn-primary btn-md"
+				style="min-width: 100px;">
+		</div>
+	</div>
+	</div>
+	<div class="row" ng-if="editRide == true">
+		<div class="col-xs-8 col-xs-offset-2" style="text-align: center;">
+			<div class="row">
+				<div class="col-xs-4 "
+					style="text-align: center; padding-top: 5px;">
+					<label>Destination Location</label>
+				</div>
+				<div class="col-xs-8">
+					<input type="text" class="form-control" id="destLocation"
+						name="destLocation" ng-model="destLocation" googledestination />
+				</div>
+			</div>
+			<div class="row" style="padding-top: 10px;">
+				<div class="col-xs-3 col-xs-offset-3">
+					<input type="button" value="Submit" ng-click="getNewRoute()" 
+						class="btn btn-primary btn-md" style="min-width: 100px;">
+				</div>
+				<!-- <div class="col-xs-3">
+					<input type="button" value="Re-Route" ng-click="submitNewRoute()" 
+						class="btn btn-primary btn-md" style="min-width: 100px;">
+				</div> -->
+				<div class="col-xs-3">
+					<input type="button" value="Cancel Ride" ng-click="cancelTheRide()" class="btn btn-primary btn-md"
+						style="min-width: 100px;">
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row" style="padding-top: 10px; padding-bottom: 30px;">
+		 <div class="col-xs-8 col-xs-offset-2"
+			style="text-align: center;">
+			<map center="current-position" zoom-to-include-markers='true'">
+				<!-- <marker position="{{sourcePosition.lat}}, {{sourcePosition.lng}}"></marker>
+				<marker position="{{destPosition.lat}}, {{destPosition.lng}}"></marker> -->
+				<directions
+		          draggable="true"
+		          travel-mode="DRIVING"
+		          origin={{source}}
+		          destination={{destination}}>
+        		</directions>
+			</map>
+		</div> 
+		<!-- <div class="row">
+			<div class="col-xs-8 col-xs-offset-2"
+				style="text-align: center; padding-top: 10px;">
+				<div id="dvDistance" ng-model="distance">{{ distance }}</div>
+				<div id="dvDuration" ng-model="duration">{{ duration }}</div>
+			</div>
+		</div> -->
+	</div>

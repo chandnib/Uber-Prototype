@@ -1,0 +1,58 @@
+<div class="row" ng-init="LoadDrivers()">
+	<div class="col-xs-10 col-xs-offset-1" padding-top:20px; style="border-bottom: 1px solid #ccc; text-align:center;">
+	<div class="row">
+      <div class="col-xs-5 col-xs-offset-3">
+        <h1 style="font-size:22px;" align="center">Select the Driver</h1>
+      </div>
+      <div class="col-xs-1" style="padding-top:5px;">
+      <button type="button" class="btn btn-primary custom" ng-click="createRide()">Create Ride</button>
+      </div>
+     </div>
+	 </div>		
+ </div>
+    <div class="row">
+      <div class="col-xs-10 col-xs-offset-1" style="border-bottom: 1px solid #ccc; padding-top:10px; padding-bottom:10px;">
+      <div class="row">
+      	<div class="col-xs-10">
+        <div id="map" style="width:700px;height:350px;"></div>
+        </div>
+        <div ng-hide="hiddenbutton">
+        <button ng-click="loadreview()" id="clickme">Click me!</button>
+        </div>
+      </div>
+    </div>
+</div>
+
+    <div class="row">
+    <div class="col-xs-10 col-xs-offset-1" style="border-bottom: 1px solid #ccc; padding-top:10px; padding-bottom:10px;">
+        <div class="row" ng-hide="DriverDetails">
+        <div class="col-xs-6" style="text-align:center; min-height:50px;">
+        <iframe width="310" height="250"
+        src="{{videourl}}">
+        </iframe>
+        </div>
+        <div class="col-xs-6">
+        <div class="row" align="center"><img ng-src="{{driverimg}}" style="width:100px;height:100px;"></div>
+        <br>
+        <div class="row"><div class="col-xs-10 col-xs-offset-1">Name: {{drivername}}</div></div>
+        <div class="row"><div class="col-xs-10 col-xs-offset-1">Car Model:{{drivercarmodel}}</div></div>
+        <div class="row"><div class="col-xs-10 col-xs-offset-1">Car Color: {{drivercarcolor}}</div></div>
+        <div class="row"><div class="col-xs-10 col-xs-offset-1">Car Year: {{drivercaryear}}</div></div>
+        <div class="row"><div class="col-xs-10 col-xs-offset-1">Rating: {{driverrating}}</div></div>
+        </div>	
+        </div>
+        <div class="row" ng-hide="DriverDetails2">
+        <div class="row" style="border-bottom: 1px solid #ccc;"><div class="col-xs-10 col-xs-offset-1">Reviews</div></div>
+        <div class="col-xs-10 col-xs-offset-1">
+        <div class="row" ng-repeat="rev in driverreviews" style="font-weight:normal;border-bottom: 1px solid #ccc;">
+       {{rev.review}}
+        </div>
+      </div>
+      </div>
+      </div>
+     </div>
+     
+     
+     
+      	
+

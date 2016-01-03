@@ -1,0 +1,24 @@
+{
+  "name": "UberServer",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "amqp": "^0.2.4",
+    "angular-google-chart": "^0.1.0",
+    "angular-google-maps": "^2.2.1",
+    "angular-ui-bootstrap": "^0.14.3",
+    "client-sessions": "^0.7.0",
+    "connect-mongo": "^0.8.2",
+    "ejs": "*",
+    "express": "3.2.6",
+    "express-session": "^1.12.1",
+    "forecast": "^0.2.1",
+    "http-proxy": "^1.12.0",
+    "mongodb": "^2.0.48",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0"
+  }
+}

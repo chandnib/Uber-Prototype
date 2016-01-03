@@ -1,0 +1,220 @@
+<html ng-app="UberPrototypeCustomer">
+  
+
+  <head>
+    <title>Uber</title>
+<meta charset="utf-8">
+<link rel="icon" href="/images/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      
+
+      <link rel="stylesheet" href="/stylesheets/style.css">   
+      <link rel="stylesheet" href="/stylesheets/maps.css">
+      <script type="text/javascript" src="../js/DriverTripsController.js"></script>
+      
+      
+
+
+	  <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+	  <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	  <script src="https://code.angularjs.org/1.4.2/angular.js"></script>
+	  <script src="https://code.angularjs.org/1.4.2/angular-route.js"></script>
+	  
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.12.1/ui-bootstrap.js"></script>
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.12.1/ui-bootstrap.min.js"></script>
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.12.1/ui-bootstrap-tpls.min.js"></script>
+	  
+	  <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+      <link href="http://pingendo.github.io/pingendo-bootstrap/themes/default/bootstrap.css" rel="stylesheet" type="text/css">
+      <script type="text/javascript" src="../app.js"></script>
+      <script type="text/javascript" src="../js/DriverController.js"></script>
+<<<<<<< HEAD
+      <script type="text/javascript" src="../js/CustomerController.js"></script>
+      
+      
+=======
+      <script type="text/javascript" src="../js/DriverTripsController.js"></script>
+
+>>>>>>> 8e6169576776bb0e6dc7f1b0fb12ad6069b2b39e
+		
+	  <script type="text/javascript" src="../js/CustRideStartedController.js"></script>
+	  <script type="text/javascript" src="../js/CustBillSumController.js"></script>
+	  <script type="text/javascript" src="../js/CustRideCreatedController.js"></script>
+	  <script src="http://maps.googleapis.com/maps/api/js?sensor=false&language=en&libraries=places&v=3.exp"></script>
+      <script src="http://rawgit.com/allenhwkim/angularjs-google-maps/master/build/scripts/ng-map.min.js"></script>
+
+		
+
+   <!-- <link href="main.css" rel="stylesheet" type="text/css">-->
+<<<<<<< HEAD
+=======
+   
+
+>>>>>>> 8e6169576776bb0e6dc7f1b0fb12ad6069b2b39e
+  </head>
+  
+
+  <body style="padding-top: 80px; padding-bottom: 70px; height="100%" ng-controller="DriverController" ng-init = "curuser=<%=user%>;initData();">
+  
+
+  <nav class="navbar navbar-default navbar-fixed-top col-lg-offset-0 col-lg-12"
+    style="background-color: #000000; min-height: 95">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+          data-target="#topFixedNavbar1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#" style="color: #FFFFFF;position: absolute;top:20%;left: 50%;margin-left: -120px !important; display: block; "><img src="/images/uber_main_logo.png" style=" height: 30px;"></a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="topFixedNavbar1">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown col-lg-12" style="bottom:40%;right: 200%;margin-left: -0px !important;">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" style="color:#FFFFFF">{{curuser.FIRST_NAME}} {{curuser.LAST_NAME}}<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li>
+                  <a href="" ng-click="routeToTemplate('/driverHome')" data-toggle="tab" role="tab">My Trips</a>
+                </li>
+                <li class="divider"></li>
+                <li>
+                  <a href="" ng-click="routeToTemplate('/DriverEditProfile')" data-toggle="tab" role="tab">Profile</a>
+                </li>
+                <li class="divider"></li>
+                <li>
+                  <a href="" ng-click="routeToTemplate('/DriverRideCreated')" data-toggle="tab" role="tab">Payment</a>
+                </li>
+                <li class="divider"></li>
+                <li>
+                  <a href="" ng-click="logout()" data-toggle="tab" role="tab">Logout</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <!-- /.container-fluid -->
+    </nav>
+
+      <div class="container" style="overflow-x:hidden;overflow-y:auto;height:85%;width:100%;">
+      <div class="row" >
+      <div class="col-xs-10 col-xs-offset-1" >
+        <div class="row" style="border-right: 1px solid #ccc; ">
+          <div class="col-xs-2" style="border-right: ridge; border-left: 1px solid #ccc;">
+            <div class="row" >
+              <div class="col-xs-12">
+
+                <div class="panel-group" id="accordion1" style="padding-top:30px;">
+                  <img  ng-src="{{curuser.IMAGE_URL}}" class="img-circle img-responsive" alt="Placeholder image">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-12">
+                  <div class="list-group" style="padding:0px 0px;margin-left:0;margin-right:0;">
+                    <a href="" ng-click="routeToTemplate('/driverHome')" class="list-group-item" style="margin-left:0;margin-right:0; border-left:none;font-size:18px;border-right:none">My Trips</a>
+                    <a href="" ng-click="routeToTemplate('/BookaRide')" class="list-group-item" style="margin-left:0;margin-right:0; border-left:none;font-size:18px;border-right:none">Book a Ride</a>
+                    <a href="" ng-click="routeToTemplate('/DriverEditProfile')" class="list-group-item" style="margin-left:0;margin-right:0; border-left:none;font-size:18px;border-right:none">Profile</a>
+                    <a href="" ng-click="routeToTemplate('/CustomerPayment')" class="list-group-item" style="margin-left:0;margin-right:0; border-left:none;font-size:18px;border-right:none">Payment</a>
+                    <a href="" ng-click="logout()" class="list-group-item" style="margin-left:0;margin-right:0; border-left:none;font-size:18px;border-right:none">Logout</a>
+                  </div>
+                </div>
+              </div>
+              </div>
+            </div>
+          <div class="col-xs-10">
+            <div class="row">
+              <!--This is where we should put rest of the pages in-->
+ 				             
+              	<!-- Template gets inserted here -->
+              	
+                <div ng-view></div>
+                
+
+
+
+
+
+
+
+
+              </div>
+            </div>
+          </div>
+          </div>
+
+
+
+
+
+
+
+
+
+          </div>
+        </div>
+
+
+      </div>
+
+
+  <nav class="navbar navbar-default navbar-fixed-bottom" style="background-color: #000000;min-height: 100">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bottomFixedNavbar1"><span class="sr-only">Toggle navigation</span><span class="icon-bar">
+          </span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#" style="position: absolute;top:20%;left: 50%;margin-left: -120px !important; display: block; color:#FFFFFF">UBER HOME</a>
+          <a class="navbar-brand" href="#" style="position: absolute;top:20%;left:57%;margin-left: -120px !important; display: block; color:#FFFFFF;font-size:24px">.</a>
+       	  <a class="navbar-brand" href="#" style="position: absolute;top:20%;left:58%;margin-left: -120px !important; display: block; color:#FFFFFF">CITIES</a>
+          <a class="navbar-brand" href="#" style="position: absolute;top:20%;left:62%;margin-left: -120px !important; display: block; color:#FFFFFF;font-size:24px">.</a>
+          <a class="navbar-brand" href="#" style="position: absolute;top:20%;left:63%;margin-left: -120px !important; display: block; color:#FFFFFF;">DRIVERS</a>
+          </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bottomFixedNavbar1">
+        </div>
+
+        <!-- /.navbar-collapse -->
+      </div>
+
+
+      <!-- /.container-fluid -->
+  </nav>
+
+  </body>
+
+</html>

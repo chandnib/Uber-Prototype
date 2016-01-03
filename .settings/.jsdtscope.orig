@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+<<<<<<< HEAD
+	<classpathentry excluding="node_modules/**/*" kind="src" path=""/>
+	<classpathentry kind="con" path="org.eclipse.wst.jsdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="node_modules"/>
+	<classpathentry kind="output" path=""/>
+</classpath>
+=======
+	<classpathentry excluding="node_modules/**/*|**/bower_components/**/*" kind="src" path=""/>
+	<classpathentry kind="con" path="org.eclipse.wst.jsdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="node_modules"/>
+	<classpathentry kind="lib" path="app/bower_components"/>
+	<classpathentry kind="output" path=""/>
+</classpath>
+>>>>>>> dfc4161d2940de52dcf17f28e8ee7d9f867e236c

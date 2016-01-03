@@ -1,0 +1,49 @@
+<<<<<<< HEAD
+{"libs":["ecma5"],"plugins":{"node":{}},"ide":{}}
+=======
+{
+  "plugins": {
+    "outline": {
+      
+    },
+    "guess-types": {
+      
+    },
+    "lint": {
+      
+    },
+    "node": {
+      
+    },
+    "angular": {
+      
+    },
+    "node-express": {
+      
+    },
+    "browser-extension": {
+      
+    },
+    "node-mongodb-native": {
+      
+    },
+    "node-mongoose": {
+      
+    },
+    "node-extension": {
+      
+    },
+    "bootstrap": {
+      
+    },
+    "jquery-extension": {
+      
+    }
+  },
+  "libs": [
+    "ecma5",
+    "browser",
+    "jquery"
+  ]
+}
+>>>>>>> dfc4161d2940de52dcf17f28e8ee7d9f867e236c

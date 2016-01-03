@@ -1,0 +1,115 @@
+<div class="row" ng-init="searchInitDriver()">
+	<div class="col-xs-12">
+		<div class="col-xs-10 col-xs-offset-1"
+			style="border-bottom: 1px solid #ccc; text-align: center;">
+			<div class="col-xs-4 col-xs-offset-4">
+				<h1>Search Driver</h1>
+			</div>
+		</div>
+	</div>
+</div>
+<div ng-show="showValidDriver" class="row">
+	<div class="col-md-2"></div>
+	<div class="col-md-4">
+		<h2>
+			<span class="label label-danger">Please enter valid data for search</span>
+		</h2>
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-1"></div>
+	<div class="col-md-2">
+		<div class="form-group">
+			<label for="usr">First Name:</label> <input type="text"
+				ng-model="driverFirstName" class="form-control input-lg" id="usr">
+		</div>
+		</div>
+		<div class="col-md-2">
+			<div class="form-group">
+				<label for="usr">Last Name:</label> <input type="text"
+					ng-model="driverLastName" class="form-control input-lg" id="usr">
+			</div>
+		</div>
+		<div class="col-md-2">
+			<div class="form-group">
+				<label for="usr">City:</label> <input type="text"
+					ng-model="driverCity" class="form-control input-lg" id="usr">
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-1"></div>
+		<div class="col-md-2">
+			<div class="form-group">
+				<label for="usr">Email Id:</label> <input type="text"
+					ng-model="driverEmailId" class="form-control input-lg" id="usr">
+			</div>
+			</div>
+			<div class="col-md-2">
+				<div class="form-group">
+					<label for="usr">Phone No:</label> <input type="text"
+						ng-model="driverPhoneNo" class="form-control input-lg" id="usr">
+				</div>
+			</div>
+			<div class="col-md-2">
+				<div class="form-group">
+					<label for="usr">SSN Id:</label> <input type="text"
+						ng-model="driverSSNId" class="form-control input-lg" id="usr">
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-3"></div>
+			<div class="col-md-2">
+				<button type="button" class="btn btn-success"
+					ng-click="searchDriver()">Search Driver</button>
+			</div>
+			<div class="col-md-2">
+				<button type="button" class="btn btn-success"
+					ng-click="clearAllDriver()">Clear Search</button>
+			</div>
+		</div>
+		<br> <br>
+		<div class="row" ng-show="showTableDriver">
+			<div class="col-md-1"></div>
+			<div class="col-md-5">
+
+				<h2>Driver Table</h2>
+				<table class="table table-bordered">
+					<thead>
+						<tr>
+							<th>Driver Id</th>
+							<th>Driver Name</th>
+							<th>Address</th>
+							<th>City</th>
+							<th>State</th>
+							<th>ZIPCODE</th>
+							<th>EMAIL</th>
+							<th>PHONE No.</th>
+							<th>VERIFIED</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="driver in DriverList">
+							<td>{{driver.ROW_ID}}</td>
+							<td>{{driver.FIRST_NAME}} {{driver.LAST_NAME}}</td>
+							<td>{{driver.ADDRESS}}</td>
+							<td>{{driver.CITY}}</td>
+							<td>{{driver.STATE}}</td>
+							<td>{{driver.ZIPCODE}}</td>
+							<td>{{driver.EMAIL}} </td>
+							<td>{{driver.PHONE_NUM}} </td>
+							<td>{{driver.VERIFIED}} </td>
+						</tr>
+					</tbody>
+				</table>
+
+			</div>
+		</div>
+		<div class="row" ng-show="loadMoreDriver">
+			<div class="col-md-5"></div>
+			<div class="col-md-2">
+				<button type="button" class="btn btn-info"
+					ng-click="getMoreDriver()">Load More</button>
+			</div>
+		</div>

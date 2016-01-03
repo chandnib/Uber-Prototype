@@ -1,0 +1,39 @@
+
+<div class="row" style="padding-top: 20px; padding-bottom: 20px;"
+	ng-init="getPageData()">
+	<div class="col-xs-4 col-xs-offset-4" style="text-align: center;">
+		<h3>Ride Started</h3>
+	</div>
+</div>
+<div class="row">
+			<div class="col-xs-8 col-xs-offset-2"
+				style="border-top: 1px solid #ccc; text-align: center; padding-top: 10px;">
+				<div id="dvDistance" ng-model="distance">Distance {{ distance }}</div>
+				<div id="dvDuration" ng-model="duration">Time {{ duration }}</div>
+			</div>
+		</div>
+<div class="row">
+	<div class="row">
+	<div class="col-xs-10 col-xs-offset-1"
+		style="padding-top: 30px; padding-bottom: 30px;">
+		<div class="col-xs-4 col-xs-offset-4" style="text-align: center;">
+			<input type="button" value="End Ride" ng-click="endTheRide()" class="btn btn-primary btn-md"
+				style="min-width: 150px;">
+		</div>
+	</div>
+	</div>
+	<div class="row" style="padding-top: 10px; padding-bottom: 30px;">
+		 <div class="col-xs-8 col-xs-offset-2"
+			style="text-align: center;">
+			<map center="current-position" zoom-to-include-markers='true'">
+				<!-- <marker position="{{sourcePosition.lat}}, {{sourcePosition.lng}}"></marker>
+				<marker position="{{destPosition.lat}}, {{destPosition.lng}}"></marker> -->
+				<directions
+		          draggable="true"
+		          travel-mode="DRIVING"
+		          origin={{source}}
+		          destination={{destination}}>
+        		</directions>
+			</map>
+		</div> 
+	</div>

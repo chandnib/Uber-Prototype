@@ -1,0 +1,136 @@
+<html>
+  
+  <head>
+    <title>Uber</title>
+<meta charset="utf-8">
+<link rel="icon" href="/images/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+	  <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.js"></script>
+	  <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://pingendo.github.io/pingendo-bootstrap/themes/default/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="main.css" rel="stylesheet" type="text/css">
+  </head>
+  
+  <body style="padding-top: 80px; padding-bottom: 70px;">
+  <nav class="navbar navbar-default navbar-fixed-top col-lg-offset-0 col-lg-12"
+    style="background-color: #000000; min-height: 95">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+          data-target="#topFixedNavbar1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#" style="color: #FFFFFF;position: absolute;top:20%;left: 50%;margin-left: -120px !important; display: block; "><img src="/images/uber_main_logo.png" style=" height: 30px;"></a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="topFixedNavbar1">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown col-lg-12" style="bottom:40%;right: 200%;margin-left: -0px !important;">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" style="color:#FFFFFF">Username<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li>
+                  <a href="#mytrip" data-toggle="tab" role="tab">My Trips</a>
+                </li>
+                <li class="divider"></li>
+                <li>
+                  <a href="#profile" data-toggle="tab" role="tab">Profile</a>
+                </li>
+                <li class="divider"></li>
+                <li>
+                  <a href="#payment" data-toggle="tab" role="tab">Payment</a>
+                </li>
+                <li class="divider"></li>
+                <li>
+                  <a href="#logout" data-toggle="tab" role="tab">Logout</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+      </div>
+      <!-- /.container-fluid -->
+    </nav>
+    <div class="section" style="padding:0px 300px; margin: 5px;width:100%">
+      <div class="container" style="padding: 5px; margin: 5px;width:99%;">
+        <div class="row" style="width:100%;height:82%;padding: 5px; border-right:outset">
+          <div class="col-md-3" style="border-left-style:ridge;border-right-style:ridge; border-color:#C8C8C8; min-height:100%">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="panel-group" id="accordion1">
+                  <img src="/images/default_profile_pic.jpeg" class="img-circle img-responsive" alt="Placeholder image">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="list-group" style="padding:0px 0px;margin-left:0;margin-right:0;">
+                    <a href="#mytrip" class="list-group-item" style="margin-left:0;margin-right:0; border-left:none;font-size:18px;border-right:none"
+                    data-toggle="tab" role="tab">My Trips</a>
+                    <a href="#profile" class="list-group-item" style="margin-left:0;margin-right:0; border-left:none;font-size:18px;border-right:none"
+                    data-toggle="tab" role="tab">Profile</a>
+                    <a href="#payment" class="list-group-item" style="margin-left:0;margin-right:0; border-left:none;font-size:18px;border-right:none"
+                    data-toggle="tab" role="tab">Payment</a>
+                    <a href="#logout" class="list-group-item" style="margin-left:0;margin-right:0; border-left:none;font-size:18px;border-right:none"
+                    data-toggle="tab" role="tab">Logout</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-9">
+            <div class="row">
+              <!--This is where we should put rest of the pages in-->
+              <div class="col-md-12" style="width:100%;height:100%">
+                <div id="mytrip" class="tab-content">
+                  <div class="tab-pane fade in active" id="home1">
+                    <p>Content in
+                      <b>My Trip</b>
+                    </p>
+                  </div>
+                  <div class="tab-pane fade" id="profile">
+                    <p>Content 2 in My Profile</p>
+                  </div>
+                  <div class="tab-pane fade" id="payment">
+                    <p>Content in My Payments</p>
+                  </div>
+                  <div class="tab-pane fade" id="logout">
+                    <p>Content in Logout</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <nav class="navbar navbar-default navbar-fixed-bottom" style="background-color: #000000;min-height: 150">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bottomFixedNavbar1"><span class="sr-only">Toggle navigation</span><span class="icon-bar">
+          </span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#" style="position: absolute;top:20%;left: 50%;margin-left: -120px !important; display: block; color:#FFFFFF">UBER HOME</a>
+          <a class="navbar-brand" href="#" style="position: absolute;top:20%;left:57%;margin-left: -120px !important; display: block; color:#FFFFFF;font-size:24px">.</a>
+       	  <a class="navbar-brand" href="#" style="position: absolute;top:20%;left:58%;margin-left: -120px !important; display: block; color:#FFFFFF">CITIES</a>
+          <a class="navbar-brand" href="#" style="position: absolute;top:20%;left:62%;margin-left: -120px !important; display: block; color:#FFFFFF;font-size:24px">.</a>
+          <a class="navbar-brand" href="#" style="position: absolute;top:20%;left:63%;margin-left: -120px !important; display: block; color:#FFFFFF;">DRIVERS</a>
+          </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bottomFixedNavbar1">
+        </div>
+        <!-- /.navbar-collapse -->
+      </div>
+      <!-- /.container-fluid -->
+  </nav>
+  </body>
+
+</html>

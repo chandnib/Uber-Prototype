@@ -1,0 +1,118 @@
+<html><head>
+<title>Uber</title>
+<meta charset="utf-8">
+<link rel="icon" href="/images/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="../public/stylesheets/Sign_up_Driver.css" rel="stylesheet" type="text/css">
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.js"></script>
+    <script type="text/javascript" src="/js/driverjs.js"></script>
+  </head>
+  <body ng-app="UberPrototype" ng-controller="loginController">
+    <div class="navbar navbar-default navbar-static-top">
+      <div class="container">
+      
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-ex-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="/" class="navbar-brand" id="UberLogo"><img height="20" alt="Brand" src="https://d1a3f4spazzrp4.cloudfront.net/free-candy/images/logo-web-light@2x.463066c24e3dc1b129ac3a7e8c3590f1.png"></a>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar-ex-collapse">
+          <ul class="nav navbar-nav navbar-right"></ul>
+        </div>
+      </div>
+    </div>
+    <div class="section">
+      <div class="container">
+        <div class="row">
+        </div>
+      </div>
+    </div>
+    <div class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-1">
+            <img src="http://imgur.com/fvtw1gA.png" class="img-responsive">
+          </div>
+          <div class="col-md-11">
+            <form role="form" method="POST" class= "formEdit" ng-submit="submit()">
+            <h4 class="form-group"> SIGN UP TO DRIVE </h4>
+              <div class="form-group">
+                <label class="control-label" for="email">Email address</label>
+                <input class="form-control" ng-model="email" id="email" placeholder="Enter email" type="email">
+              </div>
+              <div class="form-group">
+                <label class="control-label" for="password">Password</label>
+                <input class="form-control" ng-model="password" id="password" placeholder="Password" type="password">
+              </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-1">
+            <img src="http://imgur.com/ZVxhgRb.png" class="img-responsive">
+          </div>
+          <div class="col-md-11">
+            <div class="form-group">
+              <label class="control-label">First Name:</label>
+              <input class="form-control" ng-model="firstName" id="firstName" placeholder="First Name" type="text">
+            </div>
+            <div class="form-group">
+              <label class="control-label">Last Name:</label>
+              <input class="form-control" ng-model="lastName" id="lastName" placeholder="Last Name" type="text">
+            </div>
+            <div class="form-group">
+              <label class="control-label">Mobile Number:</label>
+              <input class="form-control" ng-model="mobileNumber" id="mobileNumber" placeholder="(xxx)-xxx-xxxx" type="text">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-1">
+            <img src="http://imgur.com/reGkohx.png" class="img-responsive">
+          </div>
+          <div class="col-md-11">
+              <div class="form-group">
+                <label class="control-label" for="carModel">Car Model</label>
+                <input class="form-control" ng-model="carModel" id="carModel" placeholder="Lexus" type="text">
+              </div>
+              <div class="form-group">
+                <label class="control-label" for="carColor">Car Color</label>
+                <input class="form-control" ng-model="carColor" id="carColor" placeholder="Blue" type="text">
+              </div>
+                <div class="form-group">
+                <label class="control-label" for="carYear">Car Year</label>
+                <input class="form-control" ng-model="carYear" id="carYear" placeholder="2010" type="number">
+              </div>
+            <div class="form-group">
+                <label class="control-label" for="address">Address</label>
+                <input class="form-control" ng-model="address" id="address" placeholder="Address" type="text">
+              </div>
+               <div class="form-group">
+                <label class="control-label" for="city">City</label>
+                <input class="form-control" ng-model="city" id="city" placeholder="City" type="text">
+              </div>
+                <div class="form-group">
+                <label class="control-label" for="state">State</label>
+                <input class="form-control" ng-model="state" id="state" placeholder="State" type="text">
+              </div>
+              <div class="form-group">
+                <label class="control-label" for="zipCode">Postal Code</label>
+                <input class="form-control" ng-model="zipCode" id="zipCode" placeholder="Zip Code" type="text">
+              </div>
+              <button type="submit" class="btn btn-primary">Create Account</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+<img class= "img1" src=http://imgur.com/ieNkKsN.jpg" style="width:700px;height:228px;">
+<img class= "img2" src="http://imgur.com/0839gg6.png" style="width:700px;height:228px;">
+<img class= "img3" src="http://imgur.com/Y598Kj7.jpg" style="width:700px;height:228px;">
+</body></html>

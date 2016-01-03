@@ -1,0 +1,65 @@
+<div class="row" ng-init="initMyTrips()">
+<div class="col-xs-12">
+	<div class="col-xs-10 col-xs-offset-1" style="border-bottom: 1px solid #ccc; text-align:center;">
+      <div class="col-xs-4 col-xs-offset-4">
+        <h1>My Trips</h1>
+      </div>
+     </div>
+ </div>
+ </div>
+    <div class="row">
+    <div class="col-xs-12">
+      <div class="col-xs-10 col-xs-offset-1" style="border-bottom: 1px solid #ccc; padding-top:10px; padding-bottom:10px;">
+        <div class="row">
+        <div class="col-xs-1"></div>
+        <div class="col-xs-2">PickUp</div>
+        <div class="col-xs-2">Driver</div>
+        <div class="col-xs-2">Fare</div>
+        <div class="col-xs-2">Car</div>
+        <div class="col-xs-3">Payment Method</div>
+        </div>
+      </div>
+      <div ng-repeat="trips in mytrips">
+      <div class="row">
+      <div class="col-xs-12">
+      <div class="col-xs-10 col-xs-offset-1" style="border-bottom: 1px solid #ccc; padding-top:10px; padding-bottom:10px;">
+        <div class="row">
+        <div class="col-xs-1"><a href="" ng-model="rideid" ng-click="toggleMyTrips()"><span>&#8744</span></a></div>
+        <div class="col-xs-2">{{trips.PICKUP_DATE}}</div>
+        <div class="col-xs-2">{{trips.DRIVER}}</div>
+        <div class="col-xs-2">${{trips.FARE}}</div>
+        <div class="col-xs-2">{{trips.CAR}}</div>
+        <div class="col-xs-3"><span style="font-size:10px;">&#9679 &#9679 &#9679 &#9679 </span>{{trips.PAYMENT}}</div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="row" ng-hide="TripDetails">
+    <div class="col-xs-10 col-xs-offset-1" style="border-bottom: 1px solid #ccc; padding-top:10px; padding-bottom:10px;">
+        <div class="row">
+        <div class="col-xs-6" style="text-align:center; min-height:50px;">
+        <ng-map style="width:310px;height:200px;">
+        <directions
+         draggable="true"
+         travel-mode="DRIVING"
+         origin = {{trips.SOURCE}}
+         destination = {{trips.DESTINATION}}>
+       	 </directions>
+         </ng-map>
+        <!-- <img src="../images/mastercard.png" style="width:310px;height:200px;">   -->
+        </div>
+        <div class="col-xs-6"><div class="row" align="center" style="font-size:22px;"><b>${{trips.FARE}}</b></div>
+        <div class="row" align="center"><img src="../images/mastercard.png" style="width:35px;height:45px;"><span style="font-size:8px;">&#9679 &#9679 &#9679 &#9679 </span>{{trips.PAYMENT}}</div>
+        <br>
+        <div class="row"><div class="col-xs-10 col-xs-offset-1">PickUp: {{trips.PICKUPTIME}}</div></div>
+        <div class="row"><div class="col-xs-10 col-xs-offset-1">{{trips.SOURCE}}</div></div>
+        <br>
+        <div class="row"><div class="col-xs-10 col-xs-offset-1">DropOff: {{trips.DROPOFFTIME}}</div></div>
+        <div class="row"><div class="col-xs-10 col-xs-offset-1">{{trips.DESTINATION}}</div></div>
+        </div>	
+        </div>
+      </div>
+      </div>
+      </div>
+      </div>
+    </div>

@@ -1,0 +1,61 @@
+<div class="col-xs-12" ng-init="initBookaRide()">
+<form class="form" novalidate="">
+		  <br>
+		  <br>
+		  <br>
+          <div class="row" style="padding-top:10px; padding-bottom:10px;">
+            <div class="col-xs-1" style="padding-top:5px;">
+              <label><font size="4" color="#808080">Source</font></label>
+            </div>
+            <div class="col-xs-6 col-xs-offset-1">
+              <input type="text" class="form-control" id="source" name="source" ng-model="source" placeholder="Enter source location" googlesource/>
+            </div>
+            <div class="col-xs-2 col-xs-offset-1" ng-hide="hideinvalidsource">
+              <span font="color:red;">{{invalidsource}}</span>
+            </div>
+           </div>
+           <div class="row" style="padding-top:10px; padding-bottom:10px;">
+            <div class="col-xs-1" style="padding-top:5px;">
+              <label><font size="4" color="#808080">Destination</font></label>
+            </div>
+            <div class="col-xs-6 col-xs-offset-1">
+              <input type="text" class="form-control" id="destination" name="destination" ng-model="destination" placeholder="Enter destination location" googledestination/>
+            </div>
+            <div class="col-xs-2 col-xs-offset-1" ng-hide="hideinvaliddestination">
+              <span font="color:red;">{{invaliddestination}}</span>
+            </div>
+           </div>
+           <br>
+           <div class="col-xs-6 col-xs-offset-1">
+  		   <button type="button" class="btn btn-primary custom" ng-click="FareEstimate()">Fare Estimate</button>
+  		   </div>
+  		   <div class="col-xs-offset-1">
+  		   <button type="button" class="btn btn-primary btn-sm custom" ng-click="RequestUberX()">Request UberX</button>
+           </div>
+           
+           <div ng-hide="HideFareEstimate">
+           <br>
+           <div class="row">
+           <div class="col-xs-12">
+           <div class="col-xs-10 col-xs-offset-1" style="border-bottom: 1px solid #ccc; padding-top:10px; padding-bottom:10px;">
+           <div class="row">
+           <div class="col-xs-4">Distance</div>
+           <div class="col-xs-4">Time</div>
+           <div class="col-xs-4">Fare Estimate</div>
+           </div>
+           </div>
+           </div>
+           </div>
+           <div class="row">
+           <div class="col-xs-12">
+           <div class="col-xs-10 col-xs-offset-1" style="border-bottom: 1px solid #ccc; padding-top:10px; padding-bottom:10px;">
+           <div class="row">
+           <div class="col-xs-4">{{distance}} miles</div>
+           <div class="col-xs-4">{{time}} mins</div>
+           <div class="col-xs-4">${{fareestimate}}</div>
+           </div>
+           </div>
+          </div>
+          </div>
+           </div>
+</div>

@@ -1,0 +1,190 @@
+<style>
+.btn-danger {
+    color: #ffffff;
+    background-color: #d9534f;
+    border-color: #d43f3a;
+    width: 150px;
+    height: 44px;
+    margin-top: -70px;
+    margin-left: 450px;
+    font-size: 18px;
+    }
+.btn-primary {
+    color: #ffffff;
+    background-color: #337cbb;
+    border-color: #2e6fa7;
+    margin-left: -300px;
+}
+
+#videoUpload
+{
+margin-left:15px;
+}
+
+#video
+{
+margin-left:35px;
+}
+
+</style>
+<script type="text/javascript">
+function checkFileType(){
+	var file = document.getElementById('pofilepic');
+    var ext = file.value.match(/\.([^\.]+)$/)[1];
+    switch(ext)
+    {
+        case 'jpg':
+        case 'bmp':
+        case 'png':
+        case 'tif':
+        case 'JPG':
+        case 'JPEG':
+        case 'jpeg':
+            //alert('allowed');
+            break;
+        default:
+            alert('Profile Pictures should be images, Please check the Extension of the File.');
+        	file.value='';
+    }
+};
+</script>
+
+<div class="row">
+	<div class="col-xs-10 col-xs-offset-1" style="border-bottom: 1px solid #ccc; text-align:center;">
+      <div class="col-xs-4 col-xs-offset-4">
+        <h2>Profile</h2>
+      </div>
+     </div>
+ </div>
+    <div class="row">
+      <div class="col-xs-10 col-xs-offset-1" style="border-bottom: 1px solid #ccc; padding-top:10px; padding-bottom:10px;">
+        <h4>General Information</h4>
+      </div>
+    </div>
+    <div class="row">
+	<form action="/uploadProfilePicDriver" method="post"
+		, enctype="multipart/form-data" role="search" name="ProfileImageForm"
+		ng-submit="uploadProfilePic()" novalidate>
+		<div class="col-xs-10 col-xs-offset-1">
+			<div class="row" style="padding-top: 10px; padding-bottom: 10px;">
+				<div class="col-xs-2 col-xs-offset-6">
+					<input type="file" multiple accept='image/*' ng-model="pofilepic"
+						id="pofilepic" name="pofilepic" style="padding: 1px 1px;"
+						onchange="checkFileType()">
+				</div>
+				<div class="col-xs- col-xs-offset-6">
+					<button type="submit" 
+						class="btn btn-primary" name="submit"
+						style="padding: 1px 1px;">Upload
+						Picture</button>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>
+
+<div class="row">
+	<form  method="POST" ng-submit="uploadDriverVideo(video);">
+	<div class="col-xs-1" style="padding-top:6px; padding-left:90px;">
+            <label>Youtube Link</label>
+            </div>
+            <div class="col-xs-4">
+              <input type="text" class="form-control" id="video" name="video" ng-model="video" placeholder="{{profile.VIDEO_URL}}">
+            </div>
+				<div class="col-xs- col-xs-offset-6">
+					<input type="submit" class="btn btn-primary" id = "videoUpload" value= "Upload Video">
+				</div>
+			</div>
+		</div>
+	</form>
+</div>
+    <div class="row">
+      <div class="col-xs-10 col-xs-offset-1">
+        <form class="form" method = "POST" ng-submit="editProfile(firstName, lastName, address, city, state, zip, carModel, carColor, carYear, email, language, phoneNumber, password)">
+          <div class="row" style="padding-top:10px; padding-bottom:10px;">
+            <div class="col-xs-1" style="padding-top:5px;">
+              <label>Name</label>
+            </div>
+            <div class="col-xs-4">
+              <input type="text" class="form-control" id="firstName" name="firstName" ng-model="firstName" placeholder="{{profile.FIRST_NAME}}">
+            </div>
+            <div class="col-xs-4 col-xs-offset-1">
+              <input type="text" class="form-control" id="lastName" name="lastName" ng-model="lastName" placeholder="{{profile.LAST_NAME}}">
+            </div>
+            </div>
+          <div class="row" style="border-top: 1px solid #ccc; padding-top:10px; padding-bottom:10px;">
+            <div class="col-xs-1" style="padding-top:5px;">
+              <label>Location</label>
+            </div> 
+              <div class="col-xs-4">
+              <input type="text" class="form-control" id="address" name="address" ng-model="address" placeholder="{{profile.ADDRESS}}">
+            </div>          
+			<div class="col-xs-2">
+ 			<input type="text" class="form-control" id="city" name="city" ng-model="city" placeholder="{{profile.CITY}}">
+            </div>
+   			<div class="col-xs-2">
+ 			<input type="text" class="form-control" id="state" name="state" ng-model="state" placeholder="{{profile.STATE}}">
+            </div>
+            <div class="col-xs-2">
+              <input type="text" class="form-control" id="zip" name="zip" ng-model="zip" placeholder="{{profile.ZIPCODE}}">
+            </div>
+          </div>
+          <div class="row" style="border-top: 1px solid #ccc; padding-top:10px; padding-bottom:10px;">
+            <div class="col-xs-1" style="padding-top:5px;">
+              <label>CarInfo</label>
+            </div> 
+              <div class="col-xs-4">
+              <input type="text" class="form-control" id="carModel" name="carModel" ng-model="carModel" placeholder="{{profile.CAR_MODEL}}">
+            </div>          
+			<div class="col-xs-2">
+ 			<input type="text" class="form-control" id="carColor" name="carColor" ng-model="carColor" placeholder="{{profile.COLOR}}">
+            </div>
+   			<div class="col-xs-2">
+ 			<input type="number" class="form-control" id="carYear" name="carYear" ng-model="carYear" placeholder="{{year}}">
+            </div>
+            </div>
+          <div class="row" style="border-top: 1px solid #ccc; padding-top:10px; padding-bottom:10px;">
+            <div class="col-xs-2" style="padding-top:5px;">
+              <label>Email Address</label>
+            </div>
+            <div class="col-xs-4">
+ 			<input type="text" class="form-control" id="email" name="email" ng-model="email" placeholder="{{profile.EMAIL}}">
+            </div>
+            <div class="col-xs-1" style="padding-top:5px;">
+              <label>Language</label>
+            </div>
+            <div class="col-xs-4 col-xs-offset-1">
+              <span>
+                <select name="language" class="form-control" id="language">
+                  <option value="language">English</option>
+                </select>
+              </span>
+            </div>
+          </div>
+          <div class="row" style="border-top: 1px solid #ccc; padding-top:10px; padding-bottom:10px;">
+            <div class="col-xs-2" style="padding-top:5px;">
+              <label>Mobile</label>
+            </div>
+            <div class="col-xs-4">
+              <span>
+ 			<input type="text" class="form-control" id="phoneNumber" name="phoneNumber" ng-model="phoneNumber" placeholder="{{profile.PHONE_NUM}}">
+              </span>
+            </div>
+            <div class="col-xs-1" style="padding-top:5px;">
+              <label>Password</label>
+            </div>
+            <div class="col-xs-4">
+ 			<input type="password" class="form-control" id="password" name="password" ng-model="password" placeholder=". . . . . . .">
+            </div>
+          </div>
+          <div class="row" style="border-top: 1px solid #ccc; padding-top:10px; padding-bottom:10px;">
+            <div class="col-xs-4 col-xs-offset-4" style="text-align:center;">
+              <input type="submit" value="Update Profile" class="btn btn-primary btn-lg">
+            </div>
+          </div>
+        </form>
+<form action="/deleteDriver">
+<input type="submit" value="Delete Account" class="btn btn-danger">
+</form>
+      </div>
+    </div>
